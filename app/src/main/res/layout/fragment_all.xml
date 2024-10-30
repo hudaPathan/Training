@@ -129,7 +129,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             app:boxStrokeColor="@color/text_input_stroke"
-            app:endIconDrawable="@drawable/down"
+            app:endIconDrawable="@drawable/percent"
             app:endIconTint="#6F727D"
             app:boxCornerRadiusTopStart="12dp"
             app:boxCornerRadiusTopEnd="12dp"

@@ -32,6 +32,12 @@ class FragmentAll : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val textInputLayout: TextInputLayout= view.findViewById(R.id.textInputLayout)
+        val textInputLayout2: TextInputLayout= view.findViewById(R.id.textInputLayout2)
+        val textInputLayout3: TextInputLayout= view.findViewById(R.id.textInputLayout3)
+        val textInputLayout4: TextInputLayout= view.findViewById(R.id.textInputLayout4)
+
+
+
 
         // Find views and set up UI logic here
         val list_items = listOf("Article", "Article 2", "Article 3", "Article 4","Article 5", "Article 6")
@@ -59,7 +65,64 @@ class FragmentAll : Fragment() {
 
         }
 
-        val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
+        //List items for amount
+        val list_amount = listOf("$56", "$560", "$23", "$2134")
+        val autoCompleteTextView2:AutoCompleteTextView= view.findViewById(R.id.autocomplete2)
+        val arrayAdapter2= ArrayAdapter(requireContext(),R.layout.list_item,list_amount)
+        autoCompleteTextView2.setAdapter(arrayAdapter2)
+        autoCompleteTextView2.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->
+
+            val itemSelected= adapterView.getItemAtPosition(i)
+            Toast.makeText(requireContext(), "Item : $itemSelected", Toast.LENGTH_SHORT).show()
+        }
+
+        autoCompleteTextView2.setOnFocusChangeListener { v, hasFocus ->
+
+            if (autoCompleteTextView2.hasFocus())
+            {
+                textInputLayout2.setEndIconDrawable(R.drawable.up)
+            }
+            else
+            {
+                textInputLayout2.setEndIconDrawable(R.drawable.down)
+
+            }
+
+
+        }
+        //List items for amount
+        val list_quantity= listOf(1,2,3,4,5,6,7,8,9)
+        val autoCompleteTextView3:AutoCompleteTextView= view.findViewById(R.id.autocomplete3)
+        val arrayAdapter3= ArrayAdapter(requireContext(),R.layout.list_item,list_quantity)
+        autoCompleteTextView3.setAdapter(arrayAdapter3)
+        autoCompleteTextView3.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->
+
+            val itemSelected= adapterView.getItemAtPosition(i)
+            Toast.makeText(requireContext(), "Item : $itemSelected", Toast.LENGTH_SHORT).show()
+        }
+
+        autoCompleteTextView3.setOnFocusChangeListener { v, hasFocus ->
+
+            if (autoCompleteTextView3.hasFocus()) {
+                textInputLayout3.setEndIconDrawable(R.drawable.up)
+            } else {
+                textInputLayout3.setEndIconDrawable(R.drawable.down)
+
+            }}
+
+        //List items for tax
+       val list_tax= listOf(5,7,9,2,3,6)
+        val autoCompleteTextView4:AutoCompleteTextView= view.findViewById(R.id.autocomplete4)
+        val arrayAdapter4= ArrayAdapter(requireContext(),R.layout.list_item,list_tax)
+        autoCompleteTextView4.setAdapter(arrayAdapter4)
+        autoCompleteTextView4.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->
+
+            val itemSelected= adapterView.getItemAtPosition(i)
+            Toast.makeText(requireContext(), "Item : $itemSelected", Toast.LENGTH_SHORT).show()
+        }
+
+
+            val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
         val color1 = Color.rgb(238, 243, 255)
         val color2 = Color.rgb(39 , 174, 96)
         val color3 = Color.WHITE
