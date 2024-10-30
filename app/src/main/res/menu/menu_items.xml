@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/All"
+        android:title="All"/>
+    <item
+        android:id="@+id/Dev"
+        android:title="Dev"/>
+    <item
+        android:id="@+id/Bawaseer"
+        android:title="Bawaseer"/>
+    <item
+        android:id="@+id/Check"
+        android:title="Check"/>
+    <item
+        android:id="@+id/Book"
+        android:title="Book"/>
+</menu>

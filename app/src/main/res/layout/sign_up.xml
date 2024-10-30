@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signUpActivity"
+    android:background="#F7F9FE"
+    tools:context=".SignUp"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+<ImageView
+    android:layout_width="36dp"
+    android:layout_margin="10dp"
+    android:layout_height="36dp"
+    android:src="@drawable/back"
+    />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User Account"
+            android:textSize="30sp"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/roboto_light"
+            android:textColor="#333333"
+            android:textAlignment="center"/>
+
+
+        <EditText
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/first_name"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/roboto_light"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/email_addre"
+            android:textSize="12sp"
+            android:paddingLeft="10dp"
+            android:hint="First Name"
+            />
+        <EditText
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/last_name"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:paddingLeft="10dp"
+
+            android:layout_margin="8dp"
+            android:fontFamily="@font/roboto_light"
+            android:textSize="12sp"
+            android:background="@drawable/email_addre"
+            android:hint="Last Name"
+            />
+
+        <EditText
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/mobile_number"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/roboto_light"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:paddingLeft="10dp"
+            android:background="@drawable/email_addre"
+            android:textSize="12sp"
+            android:hint="Mobile Number"
+            />
+        <EditText
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/email"
+            android:paddingLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:fontFamily="@font/roboto_light"
+            android:textSize="12sp"
+            android:background="@drawable/email_addre"
+            android:hint="Email"
+            />
+
+        <EditText
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/company_name"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/roboto_light"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/email_addre"
+            android:textSize="12sp"
+            android:hint="Company Name"
+            />
+        <EditText
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/address1"
+            android:paddingLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:fontFamily="@font/roboto_light"
+            android:textSize="12sp"
+            android:background="@drawable/email_addre"
+            android:hint="Address"
+            />
+
+        <EditText
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/address2"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/roboto_light"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:paddingLeft="10dp"
+            android:background="@drawable/email_addre"
+            android:textSize="12sp"
+            android:hint="Address"
+            />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="8dp"
+        >
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/custom_checkbox"
+            android:paddingStart="8dp"
+            android:paddingLeft="8dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agree to our terms and saas rev details"
+            android:textSize="10sp"
+            android:fontFamily="@font/roboto_light"
+            android:textColor="#20358E" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NEXT"
+        android:textColor="#FFFFFF"
+        android:layout_margin="8dp"
+        android:textSize="18dp"
+        android:fontFamily="@font/roboto_regular"
+        android:background="@drawable/btn"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="If you have already an account ? "
+            android:textSize="12sp"
+            android:textColor="#333333"
+            android:fontFamily="@font/roboto_light"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign in Now"
+            android:id="@+id/signin"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="12sp"
+            android:textColor="#20358E"
+            />
+    </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

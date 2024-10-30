@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loginActivity"
+    android:background="#F7F9FE"
+    tools:context=".Login"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:src="@drawable/login"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get Started"
+            android:textSize="30sp"
+            android:fontFamily="@font/roboto_light"
+            android:textColor="#333333"
+           android:textAlignment="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login to your account"
+            android:textSize="12sp"
+            android:fontFamily="@font/roboto_light"
+            android:textColor="#333333"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="center"/>
+
+        <EditText
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/email_address"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/roboto_light"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/email_addre"
+            android:textSize="12sp"
+            android:padding="10dp"
+            android:hint="Email Address"
+            />
+        <EditText
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/password"
+            android:inputType="textWebPassword"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/roboto_light"
+            android:textSize="12sp"
+            android:padding="10dp"
+            android:background="@drawable/email_addre"
+            android:hint="Password"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            >
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/custom_checkbox"
+                android:paddingStart="8dp"
+                android:paddingLeft="8dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remember me"
+                android:textSize="12sp"
+                android:fontFamily="@font/roboto_light"
+                android:textColor="#4E4E4E" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/forgotPass"
+                android:text="Forgot Password?"
+                android:textSize="12sp"
+                android:fontFamily="@font/roboto_regular"
+                android:layout_marginRight="5dp"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                android:textColor="#20358E" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SIGN IN"
+            android:textColor="#FFFFFF"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/roboto_regular"
+            android:background="@drawable/btn"
+            />
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_gravity="center"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="If you don't have an account ? "
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:textSize="12sp"
+        android:textColor="#333333"
+        android:fontFamily="@font/roboto_light"
+        android:textAlignment="center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up Now"
+        android:id="@+id/signup"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:textSize="12sp"
+        android:textColor="#20358E"
+        android:fontFamily="@font/roboto_regular"
+        android:textAlignment="center"/>
+
+</LinearLayout>
+
+
+
+
+</LinearLayout>
