@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,6 +30,10 @@ class Menu1: AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        val splashScreen = installSplashScreen()
+        splashScreen.setKeepOnScreenCondition{
+            false
         }
         val tabLayout: TabLayout = findViewById<TabLayout>(R.id.tabLayout)
         val viewPager: ViewPager2 = findViewById<ViewPager2>(R.id.viewPager)

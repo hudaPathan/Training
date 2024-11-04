@@ -123,6 +123,7 @@ class FragmentAll : Fragment() {
 
 
             val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
+        recyclerView.setOnTouchListener{ _, _ -> false }
         val color1 = Color.rgb(238, 243, 255)
         val color2 = Color.rgb(39 , 174, 96)
         val color3 = Color.WHITE

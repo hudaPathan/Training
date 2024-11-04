@@ -10,4 +10,6 @@
     </style>
 
     <style name="Theme.Training" parent="Theme.AppCompat" />
+
+
 </resources>
