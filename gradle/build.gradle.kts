@@ -50,5 +50,4 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     implementation("androidx.core:core-splashscreen:1.0.0")
     implementation("com.github.highcharts:highcharts-android:10.3.2")
-    implementation ("com.google.code.gson:gson:2.8.9")
 }

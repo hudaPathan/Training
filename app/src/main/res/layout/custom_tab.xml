@@ -13,7 +13,7 @@
         android:maxLines="1"
         android:padding="5dp"
         android:layout_margin="5dp"
-        android:textColor="#6F727D"
+        android:textColor="@color/paragraph"
         android:fontFamily="@font/roboto_light"
         android:text="Tab Title"
         />

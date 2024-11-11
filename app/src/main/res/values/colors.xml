@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <color name="heading">#333333</color>
+    <color name="black">#000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="colorSelected">#20358E</color>
     <color name="colorDefault">#F7F9FE</color>
+    <color name="secondary">#20358E</color>
+    <color name="card_gradient">#F7F9FE</color>
+    <color name="text_bg">#01A5FE</color>
+    <color name="main">#88CFFD</color>
+    <color name="gray_1">#4E4E4E</color>
+    <color name="paragraph">#6F727D</color>
+
+
+
+
+
 
 </resources>

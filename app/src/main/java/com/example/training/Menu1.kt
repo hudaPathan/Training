@@ -2,10 +2,13 @@ package com.example.training
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.FrameLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -13,12 +16,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.training.R.id.autocomplete
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import kotlin.math.log
 
 class Menu1: AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -36,25 +41,115 @@ class Menu1: AppCompatActivity() {
             false
         }
         val tabLayout: TabLayout = findViewById<TabLayout>(R.id.tabLayout)
-        val viewPager: ViewPager2 = findViewById<ViewPager2>(R.id.viewPager)
-        val adapter: ViewPageAdapter = ViewPageAdapter(this)
-        viewPager.adapter = adapter
 
-        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            val tabView= LayoutInflater.from(this).inflate(R.layout.custom_tab,null)
-            val tabtitle: TextView= tabView.findViewById(R.id.tab_title)
-            // Set tab titles here (you can customize based on position)
-            when (position) {
-                0 -> tabtitle.text = "All"
-                1 -> tabtitle.text = "Dev"
-                2 -> tabtitle.text = "Bawaseer"
-                3 -> tabtitle.text = "Check"
-                4 -> tabtitle.text = "Book"
+        val tabNames = listOf("All", "Dev", "Bawaseer", "Check", "Book")
+        for (name in tabNames){
+            tabLayout.addTab(tabLayout.newTab().setText(name))
+        }
+
+
+
+
+        val DevData= listOf(
+            Items(R.drawable.item_2, "Clock", "$12"),
+            Items(R.drawable.item_2, "Clock", "$12"),
+            Items(R.drawable.item_2, "Clock", "$12"),
+            Items(R.drawable.item_2, "Clock", "$12"),
+            Items(R.drawable.item_2, "Clock", "$12"),
+            Items(R.drawable.item_2, "Clock", "$12"),
+            Items(R.drawable.item_2, "Clock", "$12"),
+            Items(R.drawable.item_2, "Clock", "$12")
+        )
+
+        val CheckData= listOf(
+            Items(R.drawable.item_1, "Clock", "$12"),
+            Items(R.drawable.item_2, "Clock", "$12"),
+            Items(R.drawable.item_1, "Clock", "$12"),
+            Items(R.drawable.item_2, "Clock", "$12"),
+            Items(R.drawable.item_1, "Clock", "$12"),
+            Items(R.drawable.item_2, "Clock", "$12"),
+            Items(R.drawable.item_1, "Clock", "$12"),
+            Items(R.drawable.item_2, "Clock", "$12")
+        )
+        val BookData= listOf(
+            Items(R.drawable.item_1, "Clock", "$12"),
+            Items(R.drawable.item_2, "Clock", "$12"),
+            Items(R.drawable.item_1, "Clock", "$12"),
+            Items(R.drawable.item_2, "Clock", "$12"),
+            Items(R.drawable.item_1, "Clock", "$12"),
+            Items(R.drawable.item_2, "Clock", "$12"),
+            Items(R.drawable.item_1, "Clock", "$12"),
+            Items(R.drawable.item_2, "Clock", "$12")
+        )
+
+        val BawData= listOf(
+            Items(R.drawable.item_1, "Clock", "$12"),
+            Items(R.drawable.item_2, "Clock", "$12"),
+            Items(R.drawable.item_1, "Clock", "$12"),
+            Items(R.drawable.item_2, "Clock", "$12"),
+            Items(R.drawable.item_1, "Clock", "$12"),
+            Items(R.drawable.item_2, "Clock", "$12"),
+            Items(R.drawable.item_1, "Clock", "$12"),
+            Items(R.drawable.item_2, "Clock", "$12")
+        )
+
+
+        val dataMap = mapOf(
+            "Dev" to DevData,
+            "Bawaseer" to BawData,
+            "Check" to CheckData,
+            "Book" to BookData
+        )
+
+        val recyclerView:RecyclerView= findViewById(R.id.recyclerView)
+
+        val fragment = FragmentAll()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.contentFrame, fragment)
+            .commit()
+        recyclerView.visibility = View.GONE
+        findViewById<FrameLayout>(R.id.contentFrame).visibility = View.VISIBLE
+
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                // Check if tab is not null and log the tab text
+                val tabText = tab?.text.toString()
+                Log.d("TabSelected", "Selected tab: $tabText")
+
+                if (tabText== "All")
+                {
+                    val fragment = FragmentAll()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.contentFrame, fragment)
+                        .commit()
+                    recyclerView.visibility = View.GONE
+                    findViewById<FrameLayout>(R.id.contentFrame).visibility = View.VISIBLE
+
+
+                }
+                else{
+                    recyclerView.visibility = View.VISIBLE
+                    findViewById<FrameLayout>(R.id.contentFrame).visibility = View.GONE
+
+                    val imageAdapter = ImageAdapter(dataMap[tabText] ?: emptyList())
+                    recyclerView.adapter= imageAdapter
+                    recyclerView.layoutManager= GridLayoutManager(this@Menu1, 2)
+                }
+
+
             }
-            tab.customView= tabView
-        }.attach()
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {}
+            override fun onTabReselected(tab: TabLayout.Tab?) {}
+        })
+
 
 
     }
 
-}
+
+
+
+        }
+
+

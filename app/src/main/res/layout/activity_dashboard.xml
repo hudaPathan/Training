@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F9FE"
+    android:background="@color/card_gradient"
     tools:context=".Dashboard">
     <LinearLayout
         android:id="@+id/frame_42731"
@@ -37,7 +37,7 @@
             android:gravity="center"
             android:lineSpacingExtra="4sp"
             android:text="Dashboard"
-            android:textColor="#20358E"
+            android:textColor="@color/secondary"
             android:textSize="22sp"
             android:translationY="0.97sp" />
 
@@ -85,7 +85,7 @@
         android:background="@drawable/outline"
         app:tabIndicatorColor="@null"
         app:tabIndicatorFullWidth="true"
-        app:tabTextColor="#20358E"
+        app:tabTextColor="@color/secondary"
         app:tabSelectedTextColor="@color/white"
         app:tabTextAppearance="@style/tabTextAppearance"
        >
@@ -100,9 +100,9 @@
         android:orientation="horizontal"
         android:id="@+id/recyclerView"
         />
-    <WebView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:id="@+id/recyclerViewChart"
         />

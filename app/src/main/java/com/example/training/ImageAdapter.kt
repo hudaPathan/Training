@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
 
-class ImageAdapter (private val box: List<Items>, private val clickListener: (String) -> Unit) :
+class ImageAdapter (private val box: List<Items>) :
 RecyclerView.Adapter<ImageAdapter.ButtonViewHolder>()
 {
     inner class ButtonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

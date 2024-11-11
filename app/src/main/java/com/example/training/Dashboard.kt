@@ -1,14 +1,10 @@
 package com.example.training
 
+import ChartAdapter
 import android.os.Bundle
 import android.view.ViewGroup
-import android.webkit.WebSettings
-import android.webkit.WebView
-import android.widget.ArrayAdapter
-import android.widget.ListView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,11 +24,7 @@ class Dashboard : AppCompatActivity() {
         }
         val tabLayout: TabLayout = findViewById(R.id.tabLayout)
 
-        for (i in 0 until tabLayout.tabCount) {
-            val tab = tabLayout.getTabAt(i)
-            val tabView = (tabLayout.getChildAt(0) as ViewGroup).getChildAt(i)
-            //tabView?.background = ContextCompat.getDrawable(this, R.drawable.tab_background_selector)
-        }
+
         val tabNames= listOf("Transaction Summary", "Sales Trends")
         for (name in tabNames){
             tabLayout.addTab(tabLayout.newTab().setText(name))
@@ -48,42 +40,73 @@ class Dashboard : AppCompatActivity() {
       recyclerView.layoutManager= LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
         recyclerView.adapter= DashboardCardAdapter(items){}
 
-        val recyclerViewChart:WebView=findViewById(R.id.recyclerViewChart)
-//        recyclerViewChart.layoutManager = LinearLayoutManager(this)
-        val websettings: WebSettings = recyclerViewChart.settings
-        websettings.javaScriptEnabled= true
-        val htmlContent = """
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-    </head>
-    <body>
-        <div id="container" style="width:100%; height:100%;"></div>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                Highcharts.chart('container', {
-                    chart: {
-                        type: 'line'
-                    },
-                    title: {
-                        text: 'Sample Chart'
-                    },
-                    xAxis: {
-                        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-                    },
-                    series: [{
-                        name: 'Temperature',
-                        data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
-                    }]
-                });
-            });
-        </script>
-    </body>
-    </html>
-"""
-recyclerViewChart.loadDataWithBaseURL(null, "", "text/html","utf-8", null)
 
 
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                when (tab?.position)
+                {
+                    0 ->  setupChart()
+                    1 -> setupChart()
+                }
+            }
 
-    }}
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                setupChart()
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+            }
+
+
+        })
+
+    }
+    private fun setupChart ()
+    {
+        val dataPie=listOf(
+            arrayListOf("Category A", 10),
+            arrayListOf("Category B", 25),
+            arrayListOf("Category C", 20)
+        )
+        val totalPie= dataPie.sumOf { it[1] as Int }
+
+        val dataCol=listOf(
+            listOf(387749, 280000, 129000, 64300, 54000, 34300),
+            listOf(45321, 140000, 10000, 140500, 19500, 113500)
+        )
+
+        val categoryCol = listOf("Year 1", "Year 2", "Year 3", "Year 4", "Year 5", "Year 6")
+
+        val dataLine= listOf(10, 20, 15, 30, 40)
+        val categoryLine = listOf("Jan", "Feb", "Mar", "Apr", "May")
+        val chartList = listOf(
+
+            ChartData(
+                title = "Line Chart",
+                chartType = ChartType.LINE,
+                data = dataLine,
+                categories = categoryLine),
+
+            ChartData(
+                title = "Column Chart",
+                chartType = ChartType.COLUMN,
+                data = dataCol,
+                categories = categoryCol
+            ),
+
+
+            ChartData(
+                title = "Donut Chart",
+                chartType = ChartType.DONUT,
+                data = dataPie,
+                total = "Total\n $totalPie"
+            )
+        )
+
+
+        val recyclerViewChart = findViewById<RecyclerView>(R.id.recyclerViewChart)
+        recyclerViewChart.layoutManager = LinearLayoutManager(this)
+        recyclerViewChart.adapter = ChartAdapter(chartList)
+    }
+}

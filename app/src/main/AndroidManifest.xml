@@ -12,17 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Base.Theme.Training"
         tools:targetApi="31">
-        <activity
-            android:name=".MenuTry"
-            android:exported="false" />
+
         <activity
             android:name=".Dashboard"
             android:exported="false" />
         <activity
-            android:name=".Menu1"
+            android:name=".SplashScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".Menu1"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
