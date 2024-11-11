@@ -7,7 +7,7 @@
         <item name="android:layout_margin">15dp</item>
         <item name="android:fontFamily">sans-serif-medium</item>
     </style>
-    
+
     <style name="tabTextAppearance">
 
         <item name="android:textSize">12sp</item>
@@ -38,4 +38,5 @@
     <string name="or">
             OR
         </string>
+
 </resources>

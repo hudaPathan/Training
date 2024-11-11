@@ -2,6 +2,8 @@ package com.example.training
 
 import android.os.Bundle
 import android.view.ViewGroup
+import android.webkit.WebSettings
+import android.webkit.WebView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.activity.enableEdgeToEdge
@@ -12,7 +14,6 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.tabs.TabLayout
-import lecho.lib.hellocharts.model.PointValue
 
 class Dashboard : AppCompatActivity() {
 
@@ -47,17 +48,42 @@ class Dashboard : AppCompatActivity() {
       recyclerView.layoutManager= LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
         recyclerView.adapter= DashboardCardAdapter(items){}
 
-        val recyclerViewChart:RecyclerView=findViewById(R.id.recyclerViewChart)
-        recyclerViewChart.layoutManager = LinearLayoutManager(this)
+        val recyclerViewChart:WebView=findViewById(R.id.recyclerViewChart)
+//        recyclerViewChart.layoutManager = LinearLayoutManager(this)
+        val websettings: WebSettings = recyclerViewChart.settings
+        websettings.javaScriptEnabled= true
+        val htmlContent = """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+    </head>
+    <body>
+        <div id="container" style="width:100%; height:100%;"></div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                Highcharts.chart('container', {
+                    chart: {
+                        type: 'line'
+                    },
+                    title: {
+                        text: 'Sample Chart'
+                    },
+                    xAxis: {
+                        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                    },
+                    series: [{
+                        name: 'Temperature',
+                        data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+                    }]
+                });
+            });
+        </script>
+    </body>
+    </html>
+"""
+recyclerViewChart.loadDataWithBaseURL(null, "", "text/html","utf-8", null)
 
-        val chartDataList = listOf(
-            ChartData(listOf(PointValue(0f, 2f), PointValue(1f, 4f), PointValue(2f, 8f))),
-            ChartData(listOf(PointValue(0f, 1f), PointValue(1f, 3f), PointValue(2f, 5f))),
-            ChartData(listOf(PointValue(0f, 4f), PointValue(1f, 5f), PointValue(2f, 7f)))
-        )
-
-        recyclerViewChart.layoutManager = LinearLayoutManager(this)
-        recyclerViewChart.adapter = ChartAdapter(chartDataList)
 
 
-}}
+    }}

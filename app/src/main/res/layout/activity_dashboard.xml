@@ -82,7 +82,7 @@
         app:tabIndicator="@drawable/btn"
         app:tabIndicatorGravity="stretch"
         app:tabIndicatorAnimationMode="elastic"
-        android:background="@drawable/custom_checkbox"
+        android:background="@drawable/outline"
         app:tabIndicatorColor="@null"
         app:tabIndicatorFullWidth="true"
         app:tabTextColor="#20358E"
@@ -100,10 +100,9 @@
         android:orientation="horizontal"
         android:id="@+id/recyclerView"
         />
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_marginTop="15dp"
         android:id="@+id/recyclerViewChart"
         />
