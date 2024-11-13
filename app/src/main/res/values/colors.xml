@@ -7,10 +7,12 @@
     <color name="colorDefault">#F7F9FE</color>
     <color name="secondary">#20358E</color>
     <color name="card_gradient">#F7F9FE</color>
-    <color name="text_bg">#01A5FE</color>
+    <color name="bg1">#1A01A5FE</color>
     <color name="main">#88CFFD</color>
     <color name="gray_1">#4E4E4E</color>
     <color name="paragraph">#6F727D</color>
+    <color name="text">#5BC980</color>
+    <color name="bg2">#335BC890</color>
 
 
 

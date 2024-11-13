@@ -4,8 +4,8 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/signUpActivity"
-    android:background="#F7F9FE"
-    tools:context=".SignUp"
+    android:background="@color/card_gradient"
+    tools:context=".SignupActivity"
     android:layout_margin="10dp"
     android:orientation="vertical">
 
@@ -27,7 +27,7 @@
             android:textSize="30sp"
             android:layout_margin="10dp"
             android:fontFamily="@font/roboto_light"
-            android:textColor="#333333"
+            android:textColor="@color/heading"
             android:textAlignment="center"/>
 
 
@@ -141,14 +141,14 @@
             android:text="Agree to our terms and saas rev details"
             android:textSize="10sp"
             android:fontFamily="@font/roboto_light"
-            android:textColor="#20358E" />
+            android:textColor="@color/secondary" />
     </LinearLayout>
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="NEXT"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:layout_margin="8dp"
         android:textSize="18dp"
         android:fontFamily="@font/roboto_regular"
@@ -166,7 +166,7 @@
             android:layout_height="wrap_content"
             android:text="If you have already an account ? "
             android:textSize="12sp"
-            android:textColor="#333333"
+            android:textColor="@color/heading"
             android:fontFamily="@font/roboto_light"
             android:textAlignment="center"/>
         <TextView
@@ -176,7 +176,7 @@
             android:id="@+id/signin"
             android:fontFamily="@font/roboto_regular"
             android:textSize="12sp"
-            android:textColor="#20358E"
+            android:textColor="@color/secondary"
             />
     </LinearLayout>
     </LinearLayout>

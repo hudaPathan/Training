@@ -1,9 +1,11 @@
+package com.example.training.adapters
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.training.CalculatorButton
+import com.example.training.data.CalculatorButton
 import com.example.training.R
 
 class CalculatorAdapter(private val buttons: List<CalculatorButton>, private val clickListener: (String) -> Unit) :

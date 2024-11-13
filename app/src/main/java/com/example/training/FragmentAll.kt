@@ -1,6 +1,6 @@
 package com.example.training
 
-import CalculatorAdapter
+import com.example.training.adapters.CalculatorAdapter
 import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,7 +13,7 @@ import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.training.R.id.autocomplete
+import com.example.training.data.CalculatorButton
 import com.google.android.material.textfield.TextInputLayout
 
 class FragmentAll : Fragment() {
@@ -34,7 +34,6 @@ class FragmentAll : Fragment() {
         val textInputLayout: TextInputLayout= view.findViewById(R.id.textInputLayout)
         val textInputLayout2: TextInputLayout= view.findViewById(R.id.textInputLayout2)
         val textInputLayout3: TextInputLayout= view.findViewById(R.id.textInputLayout3)
-        val textInputLayout4: TextInputLayout= view.findViewById(R.id.textInputLayout4)
 
 
 
@@ -132,7 +131,8 @@ class FragmentAll : Fragment() {
         val buttons = listOf(
             CalculatorButton("1", color1, color4), CalculatorButton("2",color1,color4), CalculatorButton("3", color1,color4), CalculatorButton("4", color1,color4),
             CalculatorButton("5", color1,color4), CalculatorButton("6",color1,color4), CalculatorButton("7", color1,color4), CalculatorButton("8", color1,color4),
-            CalculatorButton("9",color1,color4), CalculatorButton("0", color1,color4), CalculatorButton("0", color1,color4), CalculatorButton("+", color2,color3))
+            CalculatorButton("9",color1,color4), CalculatorButton("0", color1,color4), CalculatorButton("0", color1,color4), CalculatorButton("+", color2,color3)
+        )
 
         // Set LayoutManager
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 3)

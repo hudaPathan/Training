@@ -1,6 +1,5 @@
-package com.example.training
+package com.example.training.adapters
 
-import android.content.DialogInterface.OnClickListener
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,10 +7,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.training.data.GridItems
+import com.example.training.R
 
 
-class ImageAdapter (private val box: List<Items>) :
-RecyclerView.Adapter<ImageAdapter.ButtonViewHolder>()
+class GridAdapter (private val box: List<GridItems>) :
+RecyclerView.Adapter<GridAdapter.ButtonViewHolder>()
 {
     inner class ButtonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val item_image: ImageView = itemView.findViewById(R.id.item_image)
@@ -37,7 +38,7 @@ RecyclerView.Adapter<ImageAdapter.ButtonViewHolder>()
             .into(holder.item_image)
 
         holder.item_name.setText(box.name)
-        holder.item_price.setText(box.price)
+        holder.item_price.setText("$"+box.price)
 
 
 

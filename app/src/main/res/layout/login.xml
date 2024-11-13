@@ -4,8 +4,8 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/loginActivity"
-    android:background="#F7F9FE"
-    tools:context=".Login"
+    android:background="@color/card_gradient"
+    tools:context=".LoginActivity"
     android:layout_margin="10dp"
     android:orientation="vertical">
 
@@ -26,7 +26,7 @@
             android:text="Get Started"
             android:textSize="30sp"
             android:fontFamily="@font/roboto_light"
-            android:textColor="#333333"
+            android:textColor="@color/heading"
            android:textAlignment="center"/>
         <TextView
             android:layout_width="match_parent"
@@ -34,7 +34,7 @@
             android:text="Login to your account"
             android:textSize="12sp"
             android:fontFamily="@font/roboto_light"
-            android:textColor="#333333"
+            android:textColor="@color/heading"
             android:layout_marginBottom="10dp"
             android:textAlignment="center"/>
 
@@ -69,18 +69,17 @@
             android:layout_height="0dp"
             android:orientation="horizontal"
             android:layout_weight="1"
+            android:layout_gravity="start"
             android:layout_marginBottom="20dp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+
             >
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="8dp"
                android:button="@drawable/checkbox_state"
-                android:paddingLeft="8dp"
+                style="@style/CheckBox"
                 />
 
             <TextView
@@ -89,7 +88,7 @@
                 android:text="Remember me"
                 android:textSize="12sp"
                 android:fontFamily="@font/roboto_light"
-                android:textColor="#4E4E4E" />
+                android:textColor="@color/paragraph" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -100,7 +99,7 @@
                 android:layout_marginRight="5dp"
                 android:textAlignment="textEnd"
                 android:textStyle="bold"
-                android:textColor="#20358E" />
+                android:textColor="@color/secondary" />
 
         </LinearLayout>
     </LinearLayout>
@@ -110,7 +109,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SIGN IN"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:textSize="18dp"
@@ -131,7 +130,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginBottom="25dp"
         android:textSize="12sp"
-        android:textColor="#333333"
+        android:textColor="@color/heading"
         android:fontFamily="@font/roboto_light"
         android:textAlignment="center"/>
     <TextView
@@ -142,7 +141,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginBottom="25dp"
         android:textSize="12sp"
-        android:textColor="#20358E"
+        android:textColor="@color/secondary"
         android:fontFamily="@font/roboto_regular"
         android:textAlignment="center"/>
 

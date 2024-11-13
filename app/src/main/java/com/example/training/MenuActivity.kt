@@ -3,29 +3,20 @@ package com.example.training
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
 import android.widget.FrameLayout
-import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
-import com.example.training.R.id.autocomplete
+import com.example.training.adapters.GridAdapter
+import com.example.training.data.GridItems
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
-import kotlin.math.log
 
-class Menu1: AppCompatActivity() {
+class MenuActivity: AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,46 +42,46 @@ class Menu1: AppCompatActivity() {
 
 
         val DevData= listOf(
-            Items(R.drawable.item_2, "Clock", "$12"),
-            Items(R.drawable.item_2, "Clock", "$12"),
-            Items(R.drawable.item_2, "Clock", "$12"),
-            Items(R.drawable.item_2, "Clock", "$12"),
-            Items(R.drawable.item_2, "Clock", "$12"),
-            Items(R.drawable.item_2, "Clock", "$12"),
-            Items(R.drawable.item_2, "Clock", "$12"),
-            Items(R.drawable.item_2, "Clock", "$12")
+            GridItems(R.drawable.item_2, "Clock", "$12"),
+            GridItems(R.drawable.item_2, "Clock", "$12"),
+            GridItems(R.drawable.item_2, "Clock", "$12"),
+            GridItems(R.drawable.item_2, "Clock", "$12"),
+            GridItems(R.drawable.item_2, "Clock", "$12"),
+            GridItems(R.drawable.item_2, "Clock", "$12"),
+            GridItems(R.drawable.item_2, "Clock", "$12"),
+            GridItems(R.drawable.item_2, "Clock", "$12")
         )
 
         val CheckData= listOf(
-            Items(R.drawable.item_1, "Clock", "$12"),
-            Items(R.drawable.item_2, "Clock", "$12"),
-            Items(R.drawable.item_1, "Clock", "$12"),
-            Items(R.drawable.item_2, "Clock", "$12"),
-            Items(R.drawable.item_1, "Clock", "$12"),
-            Items(R.drawable.item_2, "Clock", "$12"),
-            Items(R.drawable.item_1, "Clock", "$12"),
-            Items(R.drawable.item_2, "Clock", "$12")
+            GridItems(R.drawable.item_1, "Clock", "$12"),
+            GridItems(R.drawable.item_2, "Clock", "$12"),
+            GridItems(R.drawable.item_1, "Clock", "$12"),
+            GridItems(R.drawable.item_2, "Clock", "$12"),
+            GridItems(R.drawable.item_1, "Clock", "$12"),
+            GridItems(R.drawable.item_2, "Clock", "$12"),
+            GridItems(R.drawable.item_1, "Clock", "$12"),
+            GridItems(R.drawable.item_2, "Clock", "$12")
         )
         val BookData= listOf(
-            Items(R.drawable.item_1, "Clock", "$12"),
-            Items(R.drawable.item_2, "Clock", "$12"),
-            Items(R.drawable.item_1, "Clock", "$12"),
-            Items(R.drawable.item_2, "Clock", "$12"),
-            Items(R.drawable.item_1, "Clock", "$12"),
-            Items(R.drawable.item_2, "Clock", "$12"),
-            Items(R.drawable.item_1, "Clock", "$12"),
-            Items(R.drawable.item_2, "Clock", "$12")
+            GridItems(R.drawable.item_1, "Clock", "$12"),
+            GridItems(R.drawable.item_2, "Clock", "$12"),
+            GridItems(R.drawable.item_1, "Clock", "$12"),
+            GridItems(R.drawable.item_2, "Clock", "$12"),
+            GridItems(R.drawable.item_1, "Clock", "$12"),
+            GridItems(R.drawable.item_2, "Clock", "$12"),
+            GridItems(R.drawable.item_1, "Clock", "$12"),
+            GridItems(R.drawable.item_2, "Clock", "$12")
         )
 
         val BawData= listOf(
-            Items(R.drawable.item_1, "Clock", "$12"),
-            Items(R.drawable.item_2, "Clock", "$12"),
-            Items(R.drawable.item_1, "Clock", "$12"),
-            Items(R.drawable.item_2, "Clock", "$12"),
-            Items(R.drawable.item_1, "Clock", "$12"),
-            Items(R.drawable.item_2, "Clock", "$12"),
-            Items(R.drawable.item_1, "Clock", "$12"),
-            Items(R.drawable.item_2, "Clock", "$12")
+            GridItems(R.drawable.item_1, "Clock", "$12"),
+            GridItems(R.drawable.item_2, "Clock", "$12"),
+            GridItems(R.drawable.item_1, "Clock", "$12"),
+            GridItems(R.drawable.item_2, "Clock", "$12"),
+            GridItems(R.drawable.item_1, "Clock", "$12"),
+            GridItems(R.drawable.item_2, "Clock", "$12"),
+            GridItems(R.drawable.item_1, "Clock", "$12"),
+            GridItems(R.drawable.item_2, "Clock", "$12")
         )
 
 
@@ -131,9 +122,9 @@ class Menu1: AppCompatActivity() {
                     recyclerView.visibility = View.VISIBLE
                     findViewById<FrameLayout>(R.id.contentFrame).visibility = View.GONE
 
-                    val imageAdapter = ImageAdapter(dataMap[tabText] ?: emptyList())
+                    val imageAdapter = GridAdapter(dataMap[tabText] ?: emptyList())
                     recyclerView.adapter= imageAdapter
-                    recyclerView.layoutManager= GridLayoutManager(this@Menu1, 2)
+                    recyclerView.layoutManager= GridLayoutManager(this@MenuActivity, 2)
                 }
 
 

@@ -1,17 +1,20 @@
 package com.example.training
 
-import ChartAdapter
+import com.example.training.adapters.ChartAdapter
 import android.os.Bundle
-import android.view.ViewGroup
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.training.adapters.DashboardCardAdapter
+import com.example.training.data.ChartData
+import com.example.training.data.ChartType
+import com.example.training.data.DashboardCards
 import com.google.android.material.tabs.TabLayout
 
-class Dashboard : AppCompatActivity() {
+class DashboardActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

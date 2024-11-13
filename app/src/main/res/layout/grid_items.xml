@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:layout_margin="15dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     app:cardCornerRadius="8dp"
+    android:layout_margin="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     cardElevation="4dp">
 
@@ -14,9 +14,9 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="100dp"
-            android:src="@drawable/search"
+            android:src="@drawable/item_1"
             android:id="@+id/item_image"
             />
 
@@ -25,9 +25,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
             android:text="clock"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:gravity="center"
-            android:textColor="#6F727D"
+            android:textColor="@color/paragraph"
             android:id="@+id/item_name"/>
 
         <TextView
@@ -35,8 +35,9 @@
             android:layout_height="wrap_content"
             android:text="$56"
             android:gravity="center"
-            android:layout_marginTop="10dp"
-            android:textColor="#20358E"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/secondary"
             android:fontFamily="@font/roboto_regular"
             android:id="@+id/item_price"/>
 

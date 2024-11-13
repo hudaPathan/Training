@@ -3,7 +3,6 @@ package com.example.training
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
@@ -14,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class ForgotPassword : AppCompatActivity() {
+class ForgotPasswordActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +26,7 @@ class ForgotPassword : AppCompatActivity() {
         }
         val txtSignIn: TextView=findViewById(R.id.txtSignIn)
         txtSignIn.setOnClickListener {
-            val intent= Intent(this, Login::class.java)
+            val intent= Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
         val email:EditText= findViewById(R.id.email_address)
@@ -38,7 +37,7 @@ class ForgotPassword : AppCompatActivity() {
             {
 
                 Toast.makeText(this, "Valid email address", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this,CreatePassword::class.java )
+                val intent = Intent(this,CreatePasswordActivity::class.java )
                 startActivity(intent)
 
             }

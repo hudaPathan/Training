@@ -14,7 +14,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
     android:layout_marginBottom="20dp"
-    android:background="#F7F9FE"
+    android:background="@color/card_gradient"
     android:orientation="vertical">
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
@@ -28,10 +28,10 @@
         app:boxCornerRadiusTopEnd="12dp"
         app:boxCornerRadiusBottomStart="12dp"
         app:boxCornerRadiusBottomEnd="12dp"
-        app:boxBackgroundColor="#FFFFFF"
+        app:boxBackgroundColor="@color/white"
         app:hintAnimationEnabled="false"
         app:hintEnabled="true"
-        app:hintTextColor="#4E4E4E"
+        app:hintTextColor="@color/gray_1"
         android:outlineProvider="none"
 
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Miscellaneous Items"
-            android:textColor="#4E4E4E"
+            android:textColor="@color/gray_1"
             android:textSize="12sp"
             android:fontFamily="@font/roboto_light"
             android:inputType="none"/>
@@ -68,10 +68,10 @@
             app:boxCornerRadiusTopEnd="12dp"
             app:boxCornerRadiusBottomStart="12dp"
             app:boxCornerRadiusBottomEnd="12dp"
-            app:boxBackgroundColor="#FFFFFF"
+            app:boxBackgroundColor="@color/white"
             app:hintAnimationEnabled="false"
             app:hintEnabled="true"
-            app:hintTextColor="#4E4E4E"
+            app:hintTextColor="@color/gray_1"
             android:outlineProvider="none"
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
@@ -80,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Amount"
-                android:textColor="#4E4E4E"
+                android:textColor="@color/gray_1"
                 android:textSize="10sp"
                 android:fontFamily="@font/roboto_light"
                 android:inputType="none"/>
@@ -102,10 +102,10 @@
             app:boxCornerRadiusTopEnd="12dp"
             app:boxCornerRadiusBottomStart="12dp"
             app:boxCornerRadiusBottomEnd="12dp"
-            app:boxBackgroundColor="#FFFFFF"
+            app:boxBackgroundColor="@color/white"
             app:hintAnimationEnabled="false"
             app:hintEnabled="true"
-            app:hintTextColor="#4E4E4E"
+            app:hintTextColor="@color/gray_1"
             android:outlineProvider="none"
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
@@ -114,7 +114,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Qty"
-                android:textColor="#4E4E4E"
+                android:textColor="@color/gray_1"
                 android:textSize="10sp"
                 android:fontFamily="@font/roboto_light"
                 android:inputType="none"/>
@@ -136,10 +136,10 @@
             app:boxCornerRadiusTopEnd="12dp"
             app:boxCornerRadiusBottomStart="12dp"
             app:boxCornerRadiusBottomEnd="12dp"
-            app:boxBackgroundColor="#FFFFFF"
+            app:boxBackgroundColor="@color/white"
             app:hintAnimationEnabled="false"
             app:hintEnabled="true"
-            app:hintTextColor="#4E4E4E"
+            app:hintTextColor="@color/gray_1"
             android:outlineProvider="none"
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
@@ -148,7 +148,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Tax"
-                android:textColor="#4E4E4E"
+                android:textColor="@color/gray_1"
                 android:textSize="10sp"
                 android:fontFamily="@font/roboto_light"
                 android:inputType="numberDecimal"/>

@@ -1,28 +1,24 @@
+package com.example.training.adapters
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.training.ChartData
-import com.example.training.ChartType
+import com.example.training.data.ChartData
+import com.example.training.data.ChartType
 import com.example.training.R
-import com.highsoft.highcharts.common.HIColor
-import com.highsoft.highcharts.common.hichartsclasses.HIAxis
 import com.highsoft.highcharts.common.hichartsclasses.HICSSObject
 import com.highsoft.highcharts.common.hichartsclasses.HIChart
 import com.highsoft.highcharts.common.hichartsclasses.HIColumn
 import com.highsoft.highcharts.common.hichartsclasses.HIDataLabels
 import com.highsoft.highcharts.common.hichartsclasses.HIExporting
-import com.highsoft.highcharts.common.hichartsclasses.HIFontMetricsObject
-import com.highsoft.highcharts.common.hichartsclasses.HILegend
 import com.highsoft.highcharts.common.hichartsclasses.HILine
 import com.highsoft.highcharts.common.hichartsclasses.HIOptions
 import com.highsoft.highcharts.common.hichartsclasses.HIPie
 import com.highsoft.highcharts.common.hichartsclasses.HISeries
-import com.highsoft.highcharts.common.hichartsclasses.HIStyle
 import com.highsoft.highcharts.common.hichartsclasses.HISubtitle
 import com.highsoft.highcharts.common.hichartsclasses.HITitle
 import com.highsoft.highcharts.common.hichartsclasses.HIXAxis
-import com.highsoft.highcharts.common.hichartsclasses.HIYAxis
 
 import com.highsoft.highcharts.core.HIChartView
 import kotlin.collections.ArrayList

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/btn_select"
+    android:fontFamily="@font/dm_sans"
+    android:layout_marginRight="5dp"
+    android:layout_marginBottom="5dp"
+    android:textColor="@color/black"
+    android:background="@drawable/button_background_selector"
+    android:text="15%"
+    >
+
+</Button>

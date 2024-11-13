@@ -1,4 +1,4 @@
-package com.example.training
+package com.example.training.data
 
 import android.graphics.Color
 

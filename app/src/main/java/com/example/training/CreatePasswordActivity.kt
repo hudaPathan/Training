@@ -2,7 +2,6 @@ package com.example.training
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -12,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class CreatePassword:AppCompatActivity() {
+class CreatePasswordActivity:AppCompatActivity() {
     val isPasswordVisible:Boolean= false
 
     @SuppressLint("MissingInflatedId")
@@ -28,7 +27,7 @@ class CreatePassword:AppCompatActivity() {
 
         val txtSignIn :TextView= findViewById(R.id.signIn)
         txtSignIn.setOnClickListener{
-            val intent = Intent (this, Login::class.java)
+            val intent = Intent (this, LoginActivity::class.java)
             startActivity(intent)
         }
         val txtPassword:TextView=findViewById(R.id.pass)

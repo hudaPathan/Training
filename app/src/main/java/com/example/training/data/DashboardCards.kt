@@ -1,4 +1,4 @@
-package com.example.training
+package com.example.training.data
 
 data class DashboardCards(
     val image: Int,
