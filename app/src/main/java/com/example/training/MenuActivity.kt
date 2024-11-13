@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.FrameLayout
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -16,7 +17,7 @@ import com.example.training.adapters.GridAdapter
 import com.example.training.data.GridItems
 import com.google.android.material.tabs.TabLayout
 
-class MenuActivity: AppCompatActivity() {
+class MenuActivity: AppCompatActivity(){
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -123,6 +124,10 @@ class MenuActivity: AppCompatActivity() {
                     findViewById<FrameLayout>(R.id.contentFrame).visibility = View.GONE
 
                     val imageAdapter = GridAdapter(dataMap[tabText] ?: emptyList())
+                    {
+                        //Handle  CLick
+
+                    }
                     recyclerView.adapter= imageAdapter
                     recyclerView.layoutManager= GridLayoutManager(this@MenuActivity, 2)
                 }
@@ -141,6 +146,6 @@ class MenuActivity: AppCompatActivity() {
 
 
 
-        }
+}
 
 

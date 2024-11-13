@@ -39,6 +39,10 @@ class SalesChartActivity : AppCompatActivity(), OnButtonClickListener{
 
         val recyclerView1:RecyclerView=findViewById(R.id.recyclerView1)
         val imageAdapter= GridAdapter(data)
+        {label ->
+            //Handle  Click
+            handleButtonClick(label)
+        }
         recyclerView1.adapter=imageAdapter
         recyclerView1.layoutManager=LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
 
@@ -47,8 +51,9 @@ class SalesChartActivity : AppCompatActivity(), OnButtonClickListener{
         val txtVal:TextView= findViewById(R.id.qt_val)
         val txtMore:TextView= findViewById(R.id.qt_more)
         val txtoriginal:TextView= findViewById(R.id.originalAmount)
+        val txttotal:TextView = findViewById(R.id.totalprice)
 
-        var quantity=1;
+        var quantity=1
 
         txtVal.setText(quantity.toString())
         txtLess.setOnClickListener {
@@ -58,13 +63,11 @@ class SalesChartActivity : AppCompatActivity(), OnButtonClickListener{
             {
                 txtLess.isClickable=false
             }
-
         }
         txtMore.setOnClickListener {
             quantity++
             txtVal.setText(quantity.toString())
             txtLess.isClickable=true
-
         }
 
 
@@ -80,7 +83,6 @@ class SalesChartActivity : AppCompatActivity(), OnButtonClickListener{
                 editText.visibility=View.VISIBLE
             }
             else
-
             {
                 editText.visibility=View.INVISIBLE
             }
@@ -92,7 +94,14 @@ class SalesChartActivity : AppCompatActivity(), OnButtonClickListener{
         editText.setText(buttonText)
 
     }
+
+    private fun handleButtonClick(label: String) {
+        // Implement calculator logic here
+        Toast.makeText(this, "Added: $label", Toast.LENGTH_SHORT).show()
+
+    }
 }
 interface OnButtonClickListener {
     fun onButtonClicked(buttonText: String)
 }
+

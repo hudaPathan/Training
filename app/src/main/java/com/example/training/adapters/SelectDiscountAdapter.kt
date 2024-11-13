@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.core.content.ContextCompat
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.training.OnButtonClickListener
@@ -20,7 +21,7 @@ RecyclerView.Adapter<SelectDiscountAdapter.ButtonViewHolder>()
          fun bind(text: String, isSelected: Boolean) {
              discount.text = text
              discount.isSelected = isSelected  // Set the button state based on selection
-             discount.setBackgroundResource(R.drawable.button_background_selector)
+            discount.setBackgroundResource(R.drawable.button_background_selector)
          }
 
 
@@ -42,7 +43,6 @@ RecyclerView.Adapter<SelectDiscountAdapter.ButtonViewHolder>()
 
          holder.discount.setText(text)
          holder.discount.setOnClickListener {
-
              holder.discount.isSelected= !holder.discount.isSelected }
 
          holder.bind(item[position], position == selectedPosition)
