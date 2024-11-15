@@ -140,12 +140,14 @@
 
             <Button
                 android:id="@+id/browseButton"
+                app:backgroundTint="@null"
                 android:layout_margin="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/attachmentTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
+
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textSize="12sp"
@@ -154,7 +156,6 @@
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:fontFamily="@font/roboto_regular"
-
                 android:text="Browse Picture" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -163,20 +164,20 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:orientation="horizontal">
-            <CheckBox
+            <com.google.android.material.checkbox.MaterialCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Single Product"
+                app:backgroundTint="@null"
                 android:layout_weight="1"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@color/gray_1"
                 android:button="@drawable/checkbox_selector"
                 />
-            <CheckBox
+            <com.google.android.material.checkbox.MaterialCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_regular"
-                android:textColor="@color/gray_1"
                 android:text="Product Variation"
                 android:button="@drawable/checkbox_selector"
                 />
@@ -217,15 +218,29 @@
 
 
                 />
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtcategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="XYZ"
-                android:textSize="16sp"
+                app:endIconDrawable="@drawable/down"
+                app:endIconTint="#6F727D"
+                app:hintEnabled="false"
                 android:layout_marginLeft="5dp"
-                android:fontFamily="@font/roboto_light"
-                android:textColor="@color/paragraph"
-                />
+                android:layout_marginRight="5dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                <AutoCompleteTextView
+                    android:id="@+id/category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="XYZ"
+                    android:backgroundTint="@null"
+                    android:textColor="@color/gray_1"
+                    android:textSize="10sp"
+                    android:fontFamily="@font/roboto_light"
+                    android:inputType="none"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -345,21 +360,21 @@
             android:orientation="horizontal">
 
             <Button
-                android:layout_width="120dp"
-                android:layout_height="45dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:backgroundTint="@null"
                 android:text="ADD PRODUCT"
                 android:layout_marginRight="20dp"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@drawable/btn_text_state"
-                android:padding="10dp"
                 android:background="@drawable/button_state"/>
             <Button
-                android:layout_width="120dp"
-                android:layout_height="45dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="CANCEL"
+                app:backgroundTint="@null"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@drawable/btn_text_state"
-                android:padding="10dp"
                 android:background="@drawable/button_state"/>
         </LinearLayout>
         </LinearLayout>

@@ -1,16 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Training" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Base.Theme.Training" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
 
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:fontFamily">@font/roboto_regular</item>
-
-
+        <item name="checkboxStyle">@style/CustomCheckBoxStyle</item>
     </style>
 
     <style name="Theme.Training" parent="Theme.AppCompat" />
+    <style name="CustomCheckBoxStyle" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
+        <item name="buttonCompat">@drawable/checkbox_selector</item>
+    </style>
 
 
 </resources>
