@@ -51,4 +51,7 @@ dependencies {
     implementation("androidx.core:core-splashscreen:1.0.0")
     implementation("com.github.highcharts:highcharts-android:10.3.2")
     implementation ("com.google.code.gson:gson:2.8.9")
+    implementation ("com.google.android.material:material:1.7.0")
+    implementation ("com.google.android.material:material:1.9.0")
+    implementation ("androidx.activity:activity-ktx:1.7.2")
 }

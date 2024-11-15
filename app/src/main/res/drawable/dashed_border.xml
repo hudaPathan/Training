@@ -1,0 +1,12 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Set the shape to be a rectangle -->
+    <solid android:color="@color/gray_alpha"/>
+
+    <!-- Set the outline (stroke) with dashed lines -->
+    <stroke
+        android:color="@color/main"
+        android:width="2dp"
+    android:dashWidth="10dp"
+    android:dashGap="5dp" />
+
+    <corners android:radius="8dp" />  </shape>
