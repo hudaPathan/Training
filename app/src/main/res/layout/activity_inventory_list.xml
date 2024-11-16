@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray_alpha"
-    tools:context=".NotificationActivity">
+android:orientation="vertical"
+    tools:context=".InventoryListActivity">
 
     <LinearLayout
         android:gravity="start"
@@ -19,11 +19,12 @@
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:background="@color/white"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
 
 
         <ImageView
-            android:id="@+id/frame"
+            android:id="@+id/ham"
             android:layout_width="wrap_content"
             android:layout_height="44dp"
             android:layout_gravity="start"
@@ -41,29 +42,28 @@
             android:fontFamily="@font/roboto_regular"
             android:gravity="center"
             android:lineSpacingExtra="4sp"
-            android:text="Notification"
+            android:text="Inventory List"
             android:textColor="@color/secondary"
             android:textSize="22sp"
             android:translationY="0.97sp" />
 
-            <TextView
-                android:id="@+id/cartIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="44dp"
-                android:padding="10dp"
-                android:text="Clear All"
-                android:textSize="12sp"
-                android:fontFamily="@font/roboto_light"
-               />
+        <ImageView
+            android:id="@+id/cartIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:padding="10dp"
+            android:textSize="12sp"
+            android:src="@drawable/search2"
+            android:fontFamily="@font/roboto_light"
+            />
+    </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/inventory_list"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/inventory_listitems"
+            />
 
 
     </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/notification_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/notification_listitems"
-        />
-
-</LinearLayout>
