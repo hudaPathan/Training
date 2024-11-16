@@ -3,6 +3,8 @@ package com.example.training
 import android.content.res.ColorStateList
 import android.net.Uri
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Switch
@@ -14,13 +16,16 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.snackbar.Snackbar
+import com.suke.widget.SwitchButton
 
 class AddInventoryActivity : AppCompatActivity() {
 
     private lateinit var imageView: ImageView
     private lateinit var attachmentTextView: TextView
     private lateinit var browseButton: Button
-    private lateinit var switch: Switch
+    private lateinit var switch: SwitchButton
+    private lateinit var category: AutoCompleteTextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,20 +41,11 @@ class AddInventoryActivity : AppCompatActivity() {
         attachmentTextView = findViewById(R.id.attachmentTextView)
         browseButton = findViewById(R.id.browseButton)
         switch = findViewById(R.id.toggle)
+        category = findViewById(R.id.categoryDropdown)
 
-
-
-        switch.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                // Set tint when the switch is checked (apply your desired colors)
-                switch.thumbTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.secondary))
-                switch.trackTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.main))
-            } else {
-                // Set gray color for unchecked state
-                switch.thumbTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.white))
-                switch.trackTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.gray_1))
-            }
-        }
+        val dropdownitems = listOf ("Option 1", "Option 2", "option 3", "option 4")
+        val adapter= ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line,dropdownitems)
+        category.setAdapter(adapter)
 
 
         browseButton.setOnClickListener {
@@ -74,8 +70,7 @@ class AddInventoryActivity : AppCompatActivity() {
 
     // Open File Picker
     private fun openFilePicker() {
-        filePickerLauncher.launch("image/*") // Use "*/*" for all files or specify formats like "image/*"
-    }
+        filePickerLauncher.launch("image/*")     }
 
     // Display Selected File
     private fun previewSelectedFile(uri: Uri) {

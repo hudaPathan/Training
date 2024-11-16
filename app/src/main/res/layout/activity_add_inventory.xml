@@ -83,7 +83,7 @@
 
     </LinearLayout>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardCornerRadius="8dp"
@@ -200,8 +200,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Product Name"
-                android:textSize="16sp"
                 android:layout_marginLeft="5dp"
+                android:textSize="16sp"
+                android:fontFamily="@font/roboto_light"
+                android:textColor="@color/paragraph"
                 />
 
             <TextView
@@ -209,7 +211,6 @@
                 android:layout_height="wrap_content"
                 android:text="Product Category"
                 android:layout_marginBottom="10dp"
-
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@color/gray_1"
                 android:textSize="16sp"
@@ -218,28 +219,32 @@
 
 
                 />
+
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtcategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:endIconMode="dropdown_menu"
                 app:endIconDrawable="@drawable/down"
                 app:endIconTint="#6F727D"
-                app:hintEnabled="false"
+                app:boxBackgroundColor="@color/white"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                app:boxStrokeColor="@color/secondary"
+                app:boxStrokeWidth="2dp"
+                app:boxStrokeWidthFocused="3dp"
+                app:hintTextColor="@color/gray_1"
+                app:cursorColor="@color/secondary"
+                android:layout_marginRight="5dp">
+
                 <AutoCompleteTextView
-                    android:id="@+id/category"
+                    android:id="@+id/categoryDropdown"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="XYZ"
-                    android:backgroundTint="@null"
-                    android:textColor="@color/gray_1"
-                    android:textSize="10sp"
+                    android:hint="Category"
+                    android:textSize="16sp"
                     android:fontFamily="@font/roboto_light"
-                    android:inputType="none"/>
-
+                    android:textColor="@color/paragraph" />
             </com.google.android.material.textfield.TextInputLayout>
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -255,14 +260,16 @@
 
 
                 />
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Tax"
+                android:cursorVisible="false"
                 android:textSize="16sp"
                 android:layout_marginLeft="5dp"
                 android:fontFamily="@font/roboto_light"
                 android:textColor="@color/paragraph"
+                android:focusedSearchResultHighlightColor="@color/secondary"
                 />
 
             <TextView
@@ -341,37 +348,39 @@
                 android:textSize="16sp"
                 android:layout_marginLeft="5dp"
                 />
-                <Switch
+                <com.suke.widget.SwitchButton
                     android:id="@+id/toggle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="end"
                     android:layout_gravity="center_horizontal"
                     android:padding="8dp"
-                    android:thumbTint="@color/white"
-                    android:trackTint="@color/gray_1"
                     />
             </LinearLayout>
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
             android:orientation="horizontal">
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:backgroundTint="@null"
+                android:layout_weight="1"
                 android:text="ADD PRODUCT"
                 android:layout_marginRight="20dp"
                 android:fontFamily="@font/roboto_regular"
-                android:textColor="@drawable/btn_text_state"
-                android:background="@drawable/button_state"/>
+                android:textColor="@color/white"
+                android:background="@drawable/btn"/>
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="CANCEL"
+                android:layout_weight="1"
                 app:backgroundTint="@null"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@drawable/btn_text_state"
@@ -380,6 +389,6 @@
         </LinearLayout>
 
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 </ScrollView>

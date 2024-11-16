@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_alpha"
+    tools:context=".NotificationActivity">
+
+    <LinearLayout
+        android:id="@+id/frame_42731"
+        android:gravity="start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/frame"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_gravity="start"
+            android:clipToOutline="true"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/ham" />
+
+        <TextView
+            android:id="@+id/point_of_sa"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="3"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:lineSpacingExtra="4sp"
+            android:text="Notification"
+            android:textColor="@color/secondary"
+            android:textSize="22sp"
+            android:translationY="0.97sp" />
+
+            <TextView
+                android:id="@+id/cartIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:padding="10dp"
+                android:text="Clear All"
+                android:textSize="12sp"
+                android:fontFamily="@font/roboto_light"
+               />
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notification_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/notification_listitems"
+        />
+
+</LinearLayout>
