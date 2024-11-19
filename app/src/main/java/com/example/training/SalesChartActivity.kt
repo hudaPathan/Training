@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.training.adapters.GridAdapter
 import com.example.training.adapters.SelectDiscountAdapter
 import com.example.training.data.GridItems
+import com.suke.widget.SwitchButton
 
 class SalesChartActivity : AppCompatActivity(), OnButtonClickListener{
     lateinit var editText:EditText
@@ -77,7 +78,7 @@ class SalesChartActivity : AppCompatActivity(), OnButtonClickListener{
         recyclerView2.adapter=adapter
         recyclerView2.layoutManager=GridLayoutManager(this,2)
 
-        val switch: Switch= findViewById(R.id.on)
+        val switch: SwitchButton= findViewById(R.id.on)
         switch.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
                 editText.visibility=View.VISIBLE

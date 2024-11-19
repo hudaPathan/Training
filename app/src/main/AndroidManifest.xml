@@ -13,7 +13,10 @@
         android:theme="@style/Base.Theme.Training"
         tools:targetApi="31">
         <activity
-            android:name=".AddInventoryActivity"
+            android:name=".SalesChartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ApprovedActivity"
             android:exported="false" />
         <activity
             android:name=".InventoryListActivity"
@@ -22,7 +25,7 @@
             android:name=".NotificationActivity"
             android:exported="false" />
         <activity
-            android:name=".SalesChartActivity"
+            android:name=".AddInventoryActivity"
             android:exported="false" />
         <activity
             android:name=".CalculatorActivity"
@@ -34,7 +37,7 @@
             android:name=".SplashScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".ApprovedActivity"
+            android:name=".TransactionDetailsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

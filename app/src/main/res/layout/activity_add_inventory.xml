@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:backgroundTint="@color/bg2"
     android:scrollbars="none"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,6 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/gray_alpha"
         android:orientation="vertical">
 
     <LinearLayout
@@ -19,8 +19,9 @@
         android:gravity="start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:background="@color/white"
         android:orientation="horizontal">
 
@@ -101,7 +102,7 @@
             android:textColor="@color/gray_1"
             android:layout_margin="10dp"
             android:fontFamily="@font/roboto_regular"
-            android:textSize="18sp"
+            android:textSize="16sp"
             />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -138,25 +139,20 @@
                 android:textColor="#737791"
                 android:textSize="14sp" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/browseButton"
-                app:backgroundTint="@null"
-                android:layout_margin="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/attachmentTextView"
                 android:layout_width="wrap_content"
-                android:layout_height="35dp"
-
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:textSize="12sp"
-                app:cornerRadius="12dp"
-                android:background="@color/main"
-                android:textAlignment="center"
-                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
                 android:fontFamily="@font/roboto_regular"
-                android:text="Browse Picture" />
+                android:textSize="10sp"
+                android:text="Browse Picture"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/main"
+                app:cornerRadius="4dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
@@ -168,20 +164,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Single Product"
-                app:backgroundTint="@null"
-                app:buttonTint="@null"
-                app:buttonCompat="@drawable/checkbox_selector"
                 android:layout_weight="1"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@color/gray_1"
-                android:button="@drawable/checkbox_selector"
+                app:buttonTint="@color/secondary"
                 />
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_regular"
                 android:text="Product Variation"
-                android:button="@drawable/checkbox_selector"
+                app:buttonTint="@color/secondary"
                 />
 
         </LinearLayout>
@@ -189,21 +182,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Product Name"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@color/gray_1"
                 android:textSize="16sp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
 
 
                 />
-            <EditText
-                android:layout_width="match_parent"
+            <com.google.android.material.textfield.TextInputEditText                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Product Name"
                 android:layout_marginLeft="5dp"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:fontFamily="@font/roboto_light"
                 android:textColor="@color/paragraph"
                 />
@@ -212,15 +203,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Product Category"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@color/gray_1"
                 android:textSize="16sp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-
-
-                />
+                android:layout_marginLeft="10dp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -229,7 +216,7 @@
                 app:endIconDrawable="@drawable/down"
                 app:endIconTint="#6F727D"
                 app:boxBackgroundColor="@color/white"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="10dp"
                 app:boxStrokeColor="@color/secondary"
                 app:boxStrokeWidth="2dp"
                 app:boxStrokeWidthFocused="3dp"
@@ -242,61 +229,51 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Category"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
+                    android:paddingBottom="10dp"
                     android:fontFamily="@font/roboto_light"
                     android:textColor="@color/paragraph" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tax %"
-                android:layout_marginBottom="10dp"
-
+                android:text="Tax%"
+                android:layout_marginBottom="5dp"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@color/gray_1"
                 android:textSize="16sp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-
-
-                />
+                android:layout_marginLeft="10dp" />
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Tax"
-                android:cursorVisible="false"
-                android:textSize="16sp"
                 android:layout_marginLeft="5dp"
+                android:textSize="14sp"
                 android:fontFamily="@font/roboto_light"
                 android:textColor="@color/paragraph"
-                android:focusedSearchResultHighlightColor="@color/secondary"
                 />
+
+
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Price $"
-                android:layout_marginBottom="10dp"
-
+                android:layout_marginBottom="5dp"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@color/gray_1"
                 android:textSize="16sp"
-                android:inputType="numberDecimal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-
-
-                />
-            <EditText
+                android:layout_marginLeft="10dp" />
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="$ 0.00"
-                android:inputType="numberDecimal"
-                android:textSize="16sp"
-                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="5dp"
+                android:textSize="14sp"
                 android:fontFamily="@font/roboto_light"
                 android:textColor="@color/paragraph"
                 />
@@ -305,79 +282,75 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SKU"
+                android:layout_marginBottom="5dp"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@color/gray_1"
                 android:textSize="16sp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-
-
-                />
-            <EditText
+                android:layout_marginLeft="10dp" />
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="SKU"
+                android:hint="#SKU"
+                android:layout_marginLeft="5dp"
+                android:textSize="14sp"
                 android:fontFamily="@font/roboto_light"
                 android:textColor="@color/paragraph"
-                android:textSize="16sp"
-                android:layout_marginLeft="5dp"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="QTY"
+                android:layout_marginBottom="5dp"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@color/gray_1"
                 android:textSize="16sp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp" />
 
-
-                />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="QTY"
-                android:layout_weight="1"
-                android:fontFamily="@font/roboto_light"
-                android:textColor="@color/paragraph"
-                android:textSize="16sp"
-                android:layout_marginLeft="5dp"
-                />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="QTY"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="@color/paragraph"
+                    />
                 <com.suke.widget.SwitchButton
                     android:id="@+id/toggle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="end"
                     android:layout_gravity="center_horizontal"
-                    android:padding="8dp"
+                    app:sb_checked_color="@color/secondary"
+                    app:sb_background="@color/gray_5"
                     />
             </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_margin="10dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
             android:orientation="horizontal">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:backgroundTint="@null"
-                android:layout_weight="1"
-                android:text="ADD PRODUCT"
                 android:layout_marginRight="20dp"
                 android:fontFamily="@font/roboto_regular"
+                android:padding="15dp"
+                android:layout_weight="1"
+                android:text="Add Product"
+                android:layout_margin="10dp"
                 android:textColor="@color/white"
-                android:background="@drawable/btn"/>
+                app:backgroundTint="@color/secondary"
+                app:cornerRadius="8dp" />
+
             <com.google.android.material.button.MaterialButton
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -386,7 +359,9 @@
                 app:backgroundTint="@color/white"
                 app:strokeColor="@color/main"
                 app:strokeWidth="1dp"
+                android:padding="15dp"
                 app:cornerRadius="10dp"
+                android:layout_margin="10dp"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@drawable/btn_text_state"/>
         </LinearLayout>

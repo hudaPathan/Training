@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.training.OnButtonClickListener
 import com.example.training.R
+import com.google.android.material.button.MaterialButton
 
 class SelectDiscountAdapter(private val item: List<String>, private val listener: OnButtonClickListener) :
 RecyclerView.Adapter<SelectDiscountAdapter.ButtonViewHolder>()
@@ -17,7 +18,7 @@ RecyclerView.Adapter<SelectDiscountAdapter.ButtonViewHolder>()
      private var selectedPosition = RecyclerView.NO_POSITION
 
      inner class ButtonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-         val discount: Button = itemView.findViewById(R.id.btn_select)
+         val discount: MaterialButton = itemView.findViewById(R.id.btn_select)
          fun bind(text: String, isSelected: Boolean) {
              discount.text = text
              discount.isSelected = isSelected  // Set the button state based on selection

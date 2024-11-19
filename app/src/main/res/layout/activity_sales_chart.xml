@@ -142,7 +142,6 @@
             android:id="@+id/recyclerView2"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-
             tools:listitem="@layout/quickdiscount_item"
             app:spanCount="2"
             tools:itemCount="4"
@@ -194,16 +193,13 @@
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@color/heading"
                 />
-            <Switch
+            <com.suke.widget.SwitchButton
                 android:id="@+id/on"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:gravity="end"
-                android:layout_gravity="center_horizontal"
-                android:padding="8dp"
-                android:thumbTint="@color/secondary"
-                android:trackTint="@color/main"
+                app:sb_checked_color="@color/secondary"
+                app:sb_background="@color/main"
                 />
         </LinearLayout>
         <EditText
@@ -242,16 +238,15 @@
             android:fontFamily="@font/roboto_regular"
             android:textColor="@color/heading"
             />
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="40dp"
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:textColor="@color/white"
-            android:background="@drawable/btn"
             android:fontFamily="@font/roboto_regular"
-            android:textSize="16sp"
-            android:layout_marginRight="10dp"
-            android:text="ADD" />
+            android:text="ADD"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/secondary"
+            app:cornerRadius="8dp" />
 
     </LinearLayout>
 
